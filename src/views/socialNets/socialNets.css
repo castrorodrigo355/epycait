@@ -1,0 +1,55 @@
+.social--nets--main--container {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  height: 60px;
+  width: 70px;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.social--nets--main--container.opened--social--nets {
+  height: 260px;
+}
+
+/* ************************************************ */
+.social--nets--main--container--button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.social--nets--main--container--button--img {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.social--nets--main--container--button--img.button--add--turned {
+  transform: rotate(135deg);
+}
+
+/* ************************************************ */
+.social--nets--main--container--icons {
+}
+
+.social--nets--main--container--icons--item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.social--nets--main--container--icons--item > img {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  object-fit: cover;
+}

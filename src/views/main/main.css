@@ -1,0 +1,10 @@
+.principal--main--container {
+  height: calc(var(--vh, 1vh) * 100 - 120px);
+  overflow: hidden;
+}
+
+@media (min-width: 500px) {
+  .principal--main--container {
+    height: calc(var(--vh, 1vh) * 100 - 60px);
+  }
+}

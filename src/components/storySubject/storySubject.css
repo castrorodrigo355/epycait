@@ -1,0 +1,33 @@
+.story--subject--main--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.story--subject--main--container--image {
+  border-radius: 50%;
+  border: 0.5px solid white;
+  overflow: hidden;
+  height: 70px;
+  width: 70px;
+  margin-bottom: 10px;
+  border-top: 3px solid rgb(255, 38, 0);
+  border-left: 3px solid rgb(255, 89, 0);
+  border-right: 3px solid rgb(255, 132, 0);
+  border-bottom: 3px solid rgb(255, 208, 0);
+}
+
+.story--subject--main--container--image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.story--subject--main--container--description {
+  color: white;
+  font-family: "proximanova-regular";
+  text-align: center;
+  font-size: 12px;
+  font-family: "proximanova-light";
+  font-style: italic;
+}

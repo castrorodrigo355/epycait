@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "proximanova-light";
+  src: url("./fonts/proximanova-light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "bahnschrift";
+  src: url("./fonts/bahnschrift.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "proximanova-bold";
+  src: url("./fonts/proximanova-bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "proximanova-regular";
+  src: url("./fonts/proximanova-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "proximanova-light";
+  src: url("./fonts/proximanova-light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "proximanova-semibold";
+  src: url("./fonts/proximanova-semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "elkwood-free";
+  src: url("./fonts/elkwood-free.otf") format("opentype");
+}

@@ -1,0 +1,61 @@
+.bottom--bar--main--container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  background: black;
+  z-index: 50;
+  border-top: 0.5px solid rgba(254, 253, 253, 0.3);
+}
+
+@media (min-width: 500px) {
+  .bottom--bar--main--container {
+    display: none;
+  }
+}
+
+.bottom--bar--main--container--items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+}
+
+.bottom--bar--main--container--items--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: 300%;
+  background-position: left;
+  transition: background-position 0.3s;
+  color: white;
+}
+
+.bottom--bar--main--container--items--item.selected--item {
+  color: #00ffff;
+  pointer-events: none;
+}
+
+.bottom--bar--main--container--items--item:active {
+  background-image: radial-gradient(
+    circle farthest-corner at 50% 50%,
+    #00ffff 0%,
+    rgba(0, 0, 255, 0) 80%
+  );
+  background-position: right;
+}
+
+.bottom--bar--main--container--items--item--icon {
+  height: 25px;
+  width: 25px;
+}
+
+.bottom--bar--main--container--items--item--description {
+  font-size: 12px;
+  pointer-events: none;
+  font-family: "proximanova-regular";
+  font-style: italic;
+  padding-right: 2px;
+}
