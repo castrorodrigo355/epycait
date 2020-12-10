@@ -1,0 +1,85 @@
+.calendar--main--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.calendar--main--container--picker {
+  /* background: white; */
+  background: #000428; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #0d4474,
+    #0d1342
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #3089d7,
+    #060a2d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border: 2px solid rgb(51, 50, 50);
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 6px 7px 0 rgba(0, 255, 255, 1);
+  -moz-box-shadow: 5px 6px 7px 0 rgba(0, 255, 255, 1);
+  box-shadow: 5px 6px 7px 0 rgba(0, 255, 255, 1);
+}
+
+.DayPicker {
+  width: calc(100vw - 20px) !important;
+  height: 365px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.DayPicker-wrapper {
+  outline: none !important;
+}
+
+.DayPicker-Caption {
+  font-family: "proximanova-regular" !important;
+  font-size: 22px !important;
+  font-style: italic !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.DayPicker-NavButton--prev {
+  outline: none !important;
+}
+
+.DayPicker-NavButton--next {
+  outline: none !important;
+}
+
+.DayPicker-WeekdaysRow {
+  font-family: "proximanova-light" !important;
+  font-size: 20px !important;
+  font-style: italic !important;
+}
+
+.DayPicker-Weekday {
+  color: white !important;
+  font-family: "bahnschrift" !important;
+}
+
+.DayPicker-Day {
+  color: white !important;
+  padding: 13px 0 !important;
+  border-radius: 50% !important;
+  outline: none !important;
+  font-family: "proximanova-regular" !important;
+  font-size: 20px !important;
+}
+
+.DayPicker-Day--disabled {
+  pointer-events: none !important;
+}
+
+.DayPicker-Day--selected {
+  background: rgba(0, 255, 255, 1) !important;
+  color: black !important;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import homeBackground from "../../icons/background/home--background.jpg";
-import blackBoard from "../../icons/background/blackboard--background.jpeg";
-import { GiOpenBook } from "react-icons/gi";
+// import blackBoard from "../../icons/background/blackboard--background.jpeg";
+// import { GiOpenBook } from "react-icons/gi";
 import { GiSpellBook } from "react-icons/gi";
 import { GiSecretBook } from "react-icons/gi";
 import "./home.css";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { Calendar } from "../calendar/calendar";
+import { Calendario } from "../calendario/calendario";
 import { Contact } from "../contact/contact";
 import { Courses } from "../courses/courses";
 import { Home } from "../home/home";
@@ -12,7 +12,7 @@ export const Main = () => {
   return (
     <div className="principal--main--container">
       <Route path="/courses" component={Courses} />
-      <Route path="/calendar" component={Calendar} />
+      <Route path="/calendar" component={Calendario} />
       <Route path="/subjectDetail/:id" component={SubjectDetail} />
       <Route path="/subjects" component={Subjects} />
       <Route path="/contact" component={Contact} />
