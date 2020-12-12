@@ -4,6 +4,21 @@
   color: white;
   font-style: italic;
   font-family: "proximanova-regular";
+  /* -webkit-box-shadow: 0px 1px 4px 1px rgba(0, 255, 255, 1);
+  -moz-box-shadow: 0px 1px 4px 1px rgba(0, 255, 255, 1);
+  box-shadow: 0px 1px 4px 1px rgba(0, 255, 255, 1); */
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.route--navbar--main--container:active {
+  font-size: 26px;
+}
+
+.route--navbar--main--container.selected--navbar--route {
+  color: #00ffff;
 }
 
 @media (min-width: 500px) and (max-width: 800px) {

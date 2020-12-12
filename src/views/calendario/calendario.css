@@ -1,9 +1,12 @@
 .calendar--main--container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
   width: 100%;
+  padding: 60px 0;
+  overflow: auto;
 }
 
 .calendar--main--container--picker {
@@ -28,7 +31,8 @@
 }
 
 .DayPicker {
-  width: calc(100vw - 20px) !important;
+  /* width: calc(100vw - 20px) !important; */
+  width: 350px !important;
   height: 365px !important;
   display: flex !important;
   flex-direction: column !important;

@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 100%;
+  overflow: auto;
 }
 
 .home--main--container--background {
   width: 100%;
-  height: 40%;
+  height: 200px;
   position: relative;
 }
 
@@ -41,7 +42,7 @@
   color: white;
   font-family: "proximanova-regular";
   font-style: italic;
-  font-size: 36px;
+  font-size: 40px;
   padding-top: 30px;
 }
 
@@ -49,8 +50,19 @@
   color: white;
   font-family: "proximanova-regular";
   font-style: italic;
-  font-size: 16px;
+  font-size: 20px;
   padding: 5px 0;
+}
+
+.home--main--container--subjects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  text-align: center;
+  font-family: "proximanova-regular";
+  font-style: italic;
+  color: #00ffff;
 }
 
 .home--main--container--book {
@@ -63,6 +75,86 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* color: #883158; */
   color: white;
+}
+
+@media (min-width: 500px) and (max-width: 659px) {
+  .home--main--container--background {
+    height: 240px;
+  }
+
+  .home--main--container--background--mask--image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .home--main--container--title {
+    font-size: 50px;
+  }
+
+  .home--main--container--description {
+    font-size: 30px;
+  }
+
+  .home--main--container--subjects > div {
+    font-size: 18px;
+  }
+
+  .home--main--container--book {
+    height: 210px;
+  }
+}
+
+@media (min-width: 660px) and (max-width: 990px) {
+  .home--main--container--background {
+    height: 280px;
+  }
+
+  .home--main--container--background--mask--image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .home--main--container--title {
+    font-size: 60px;
+  }
+
+  .home--main--container--description {
+    font-size: 35px;
+  }
+
+  .home--main--container--subjects > div {
+    font-size: 22px;
+  }
+
+  .home--main--container--book {
+    height: 220px;
+  }
+}
+
+@media (min-width: 990px) {
+  .home--main--container--background {
+    height: 320px;
+  }
+
+  .home--main--container--background--mask--image {
+    width: 190px;
+    height: 190px;
+  }
+
+  .home--main--container--title {
+    font-size: 70px;
+  }
+
+  .home--main--container--description {
+    font-size: 40px;
+  }
+
+  .home--main--container--subjects > div {
+    font-size: 24px;
+  }
+
+  .home--main--container--book {
+    height: 230px;
+  }
 }

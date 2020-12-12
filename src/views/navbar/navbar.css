@@ -46,6 +46,7 @@
 
 .navbar--main--container--title.title--move {
   width: 50%;
+  color: #00ffff;
 }
 
 @media (min-width: 500px) {

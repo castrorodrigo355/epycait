@@ -35,7 +35,7 @@ export const Navbar = ({ openRoutes, clickRoutes }) => {
           openRoutes ? "title--move" : ""
         }`}
       >
-        EPYCA
+        RODRI CLASS
       </div>
     </div>
   );

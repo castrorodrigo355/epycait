@@ -16,7 +16,6 @@ export const Subject = ({ subject }) => {
         className={`subject--main--container--header ${
           enlarged ? "enlarged--info" : ""
         }`}
-        onClick={() => history.push(`/subjectDetail/${subject.id}`)}
       >
         <img src={subject.image} alt="..." />
       </div>
@@ -35,18 +34,33 @@ export const Subject = ({ subject }) => {
       </div>
       {/* ************************************************ */}
       {enlarged && (
-        <div className="subject--main--container--details">
-          {details.map((detail) => (
+        <div
+          className="subject--main--container--details"
+          // onClick={() => history.push(`/subjectDetail/${subject.id}`)}
+        >
+          {/* {details.map((detail) => (
             <Detail key={detail.id} detail={detail} />
-          ))}
+          ))} */}
+          {`Ver detalle de ${subject.description}`}
         </div>
       )}
       {/* ************************************************ */}
       <div
         className="subject--main--container--see--more"
-        onClick={clickEnlarge}
+        //   onClick={clickEnlarge}
+        // onClick={() => {
+        //   setTimeout(() => history.push(`/subjectDetail/${subject.id}`), 500);
+        // }}
+        // >
+        //   {enlarged ? "Reducir" : "Ampliar"}
       >
-        {enlarged ? "Reducir" : "Ampliar"}
+        <ButtonDetail
+          onClick={() => {
+            setTimeout(() => history.push(`/subjectDetail/${subject.id}`), 400);
+          }}
+        >
+          Ver detalle
+        </ButtonDetail>
       </div>
     </div>
   );
@@ -54,4 +68,16 @@ export const Subject = ({ subject }) => {
 
 const Detail = ({ detail }) => {
   return <div className="detail--main--container">{detail.topic}</div>;
+};
+
+const ButtonDetail = ({ onClick, children }) => {
+  return (
+    <button
+      type="button"
+      className="button--detail--main--container"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 };

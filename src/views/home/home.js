@@ -1,9 +1,8 @@
 import React from "react";
 import homeBackground from "../../icons/background/home--background.jpg";
-// import blackBoard from "../../icons/background/blackboard--background.jpeg";
-// import { GiOpenBook } from "react-icons/gi";
 import { GiSpellBook } from "react-icons/gi";
 import { GiSecretBook } from "react-icons/gi";
+import { subjectsHome } from "../../libs/home/home";
 import "./home.css";
 
 export const Home = () => {
@@ -17,7 +16,12 @@ export const Home = () => {
       </div>
       <div className="home--main--container--title">Cursos Intensivos</div>
       <div className="home--main--container--description">
-        Verano - Cuatrimestral - Parcial - Final
+        Intensivo Verano - Cuatrimestral
+      </div>
+      <div className="home--main--container--subjects">
+        {subjectsHome.map((x, i) => (
+          <div key={i}>{x}</div>
+        ))}
       </div>
       <div className="home--main--container--book">
         <GiSpellBook className="home--main--container--book--icon" />

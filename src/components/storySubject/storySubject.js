@@ -2,12 +2,15 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./storySubject.css";
 
-export const StorySubject = ({ story }) => {
+export const StorySubject = ({ story, chooseDetailSubject }) => {
   const history = useHistory();
   return (
     <div
       className="story--subject--main--container"
-      onClick={() => history.push(`/subjectDetail/${story.id}`)}
+      onClick={() => {
+        chooseDetailSubject(story.id);
+        history.push(`/subjectDetail/${story.id}`);
+      }}
     >
       <div className="story--subject--main--container--image">
         <img src={story.image} alt="..." />

@@ -38,7 +38,7 @@
 }
 
 .subject--main--container--header.enlarged--info {
-  height: 130px;
+  height: 210px;
 }
 
 .subject--main--container--header > img {
@@ -75,13 +75,17 @@
 }
 
 .subject--main--container--details {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   width: 99%;
   padding: 10px;
-  overflow-x: auto;
+  overflow-x: auto; */
+  text-align: center;
+  font-family: "proximanova-regular";
+  font-size: 22px;
+  color: #00ffff;
 }
 
 /* ****** */
@@ -122,7 +126,21 @@
   position: absolute;
   bottom: 5px;
   right: 5px;
+}
+
+.button--detail--main--container {
   font-family: "proximanova-light";
   font-size: 14px;
+  font-style: italic;
   color: #00ffff;
+  border: 0.5px solid #00ffff;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+}
+
+.button--detail--main--container:active {
+  color: black;
+  background: #00ffff;
 }

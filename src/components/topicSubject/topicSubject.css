@@ -1,0 +1,9 @@
+.topic--subject--main--container {
+  /* border: 0.5px solid yellow; */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-family: "proximanova-regular";
+  font-style: italic;
+  font-size: 14px;
+}
