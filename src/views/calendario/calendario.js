@@ -31,7 +31,7 @@ export const Calendario = () => {
       </div>
       <div className="calendar--main--container--create">
         <button type="button" onClick={showSelectedDates}>
-          {"R"}
+          {"Create"}
         </button>
       </div>
       <div
@@ -54,11 +54,3 @@ export const Calendario = () => {
     </div>
   );
 };
-
-/*
-Buenas. Como siempre en el verano Análisis 1, Física 1, 
-Análisis 2, Física 2. Interesad@s en rendir parcial/ Final 
-8/9 clases, modalidad de 2/3 veces x semana como 
-Estos dias mando nuevo sitio web con calendario de fechas para cada materia.
-Cursos de Enero y Febrero. CEL: 115 948 4443
- */
