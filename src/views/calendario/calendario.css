@@ -7,21 +7,13 @@
   width: 100%;
   padding: 60px 0;
   overflow: auto;
+  position: relative;
 }
 
 .calendar--main--container--picker {
-  /* background: white; */
-  background: #000428; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #0d4474,
-    #0d1342
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #3089d7,
-    #060a2d
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000428;
+  background: -webkit-linear-gradient(to bottom, #0d4474, #0d1342);
+  background: linear-gradient(to bottom, #3089d7, #060a2d);
 
   border: 2px solid rgb(51, 50, 50);
   border-radius: 10px;
@@ -30,60 +22,55 @@
   box-shadow: 5px 6px 7px 0 rgba(0, 255, 255, 1);
 }
 
-.DayPicker {
-  /* width: calc(100vw - 20px) !important; */
-  width: 350px !important;
-  height: 365px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
+.calendar--main--container--create {
+  display: none;
 }
 
-.DayPicker-wrapper {
-  outline: none !important;
+.calendar--main--container--modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 300;
+  display: none;
 }
 
-.DayPicker-Caption {
-  font-family: "proximanova-regular" !important;
-  font-size: 22px !important;
-  font-style: italic !important;
-  color: rgb(255, 255, 255) !important;
+.calendar--main--container--modal.open--modal--dates {
+  display: block;
 }
 
-.DayPicker-NavButton--prev {
-  outline: none !important;
+.calendar--main--container--modal--content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
-.DayPicker-NavButton--next {
-  outline: none !important;
+.calendar--main--container--modal--content--panel {
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  background: white;
+  padding: 5px 10px 5px 15px;
+  overflow: auto;
 }
 
-.DayPicker-WeekdaysRow {
-  font-family: "proximanova-light" !important;
-  font-size: 20px !important;
-  font-style: italic !important;
+.calendar--main--container--modal--content--panel::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+  background: transparent;
 }
 
-.DayPicker-Weekday {
-  color: white !important;
-  font-family: "bahnschrift" !important;
+.calendar--main--container--modal--content--panel::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 10px;
+  box-shadow: inset 0 0 3px transparent;
 }
 
-.DayPicker-Day {
-  color: white !important;
-  padding: 13px 0 !important;
-  border-radius: 50% !important;
-  outline: none !important;
-  font-family: "proximanova-regular" !important;
-  font-size: 20px !important;
+.calendar--main--container--modal--content--panel:hover::-webkit-scrollbar {
+  background: transparent;
 }
-
-.DayPicker-Day--disabled {
-  pointer-events: none !important;
-}
-
-.DayPicker-Day--selected {
-  background: rgba(0, 255, 255, 1) !important;
-  color: black !important;
-}
+/* *************************************************** */

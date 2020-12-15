@@ -1,0 +1,56 @@
+.DayPicker {
+  width: 350px !important;
+  height: 365px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.DayPicker-wrapper {
+  outline: none !important;
+}
+
+.DayPicker-Caption {
+  font-family: "proximanova-regular" !important;
+  font-size: 22px !important;
+  font-style: italic !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.DayPicker-NavButton--prev {
+  outline: none !important;
+}
+
+.DayPicker-NavButton--next {
+  outline: none !important;
+}
+
+.DayPicker-WeekdaysRow {
+  font-family: "proximanova-light" !important;
+  font-size: 20px !important;
+  font-style: italic !important;
+}
+
+.DayPicker-Weekday {
+  color: white !important;
+  font-family: "bahnschrift" !important;
+}
+
+.DayPicker-Day {
+  color: white !important;
+  padding: 13px 0 !important;
+  border-radius: 50% !important;
+  outline: none !important;
+  font-family: "proximanova-regular" !important;
+  font-size: 20px !important;
+}
+
+.DayPicker-Day--disabled {
+  pointer-events: none !important;
+}
+
+.DayPicker-Day--selected {
+  background: rgba(0, 255, 255, 1) !important;
+  color: black !important;
+}

@@ -10,6 +10,7 @@ import "./App.css";
 
 export const App = () => {
   useEffect(() => {
+    localStorage.removeItem("courseClasses");
     setAvailableArea();
     window.addEventListener("resize", setAvailableArea);
     return () => window.removeEventListener("resize", setAvailableArea);

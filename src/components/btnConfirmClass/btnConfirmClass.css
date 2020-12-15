@@ -1,0 +1,14 @@
+.btn--confirm--class--main--container {
+  outline: none;
+  color: white;
+  background: blue;
+  padding: 2px 10px;
+  border: 0.5px solid blue;
+  border-radius: 5px;
+  font-family: "proximanova-light";
+  font-style: italic;
+}
+
+.btn--confirm--class--main--container:active {
+  border: 0.5px solid rgb(67, 67, 248);
+}
