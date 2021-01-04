@@ -1,5 +1,48 @@
 .app--main--container {
   position: relative;
   height: calc(var(--vh, 1vh) * 100);
-  background: black;
+}
+
+.app--main--container--separators {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator--main--container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  margin: 5px 0;
+}
+
+.separator--main--container--description {
+}
+
+.separator--main--container--radio {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  padding: 5px;
+  border: 0.5px solid black;
+  cursor: pointer;
+}
+
+.separator--main--container--radio.radio--selected {
+  background: blue;
+}
+
+.app--main--container--preview {
+}
+
+.app--main--container--preview--header {
+  border: 1px solid red;
+  background: gray;
+}
+
+.app--main--container--preview--header--column {
+  border: 1px solid green;
 }

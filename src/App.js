@@ -1,50 +1,121 @@
-import React, { useState, useEffect } from "react";
-import { Main } from "./views/main/main";
-import { Navbar } from "./views/navbar/navbar";
-import { Sidebar } from "./views/sidebar/sidebar";
-import { BottomBar } from "./views/bottomBar/bottomBar";
-import { SocialNets } from "./views/socialNets/socialNets";
-import { setAvailableArea } from "./libs/app/app";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import React, { useState } from "react";
+import {
+  chooseOption,
+  getSelectedCriteria,
+  parseData,
+  radioSeparators,
+} from "./readerLibs.js";
+import ReactFileReader from "react-file-reader";
 import "./App.css";
 
 export const App = () => {
-  useEffect(() => {
-    localStorage.removeItem("courseClasses");
-    setAvailableArea();
-    window.addEventListener("resize", setAvailableArea);
-    return () => window.removeEventListener("resize", setAvailableArea);
-  }, []);
+  const [separators, setSeparators] = useState(radioSeparators);
+  const [selectedColumns, setSelectedColumns] = useState(null);
+  const [selectedLines, setSelectedLines] = useState(null);
+  const [file, setFile] = useState(null);
+  const [selectedCriteria, setSelectedCriteria] = useState(-1);
 
-  const [openRoutes, setOpenRoutes] = useState(false);
-  const [openSocialNets, setOpenSocialNets] = useState(false);
+  const selectOption = (id) => {
+    const list = chooseOption(separators, id);
+    setSeparators(list);
+    setSelectedCriteria(getSelectedCriteria(list));
+  };
 
-  const clickRoutes = () => setOpenRoutes((x) => !x);
-  const openIconOptions = () => setOpenSocialNets((x) => !x);
-
-  const clickRouteSidebar = () => setOpenRoutes((x) => !x);
+  const onChange = (files) => {
+    const reader = new FileReader();
+    reader.readAsBinaryString(files[0]);
+    reader.onload = function (e) {
+      const { headerData, arrayData } = parseData(e.target.result);
+      setSelectedColumns(headerData);
+      setSelectedLines(arrayData);
+    };
+  };
 
   return (
     <div className="app--main--container">
-      <Router>
-        <Navbar openRoutes={openRoutes} clickRoutes={clickRoutes} />
-        <Sidebar
-          openRoutes={openRoutes}
-          clickRoutes={clickRoutes}
-          clickRouteSidebar={clickRouteSidebar}
-          setOpenRoutes={setOpenRoutes}
-        />
-        <div>
-          <Switch>
-            <Main />
-          </Switch>
-        </div>
-        <SocialNets
-          openSocialNets={openSocialNets}
-          openIconOptions={openIconOptions}
-        />
-        <BottomBar clickRouteSidebar={() => setOpenRoutes(false)} />
-      </Router>
+      <ReactFileReader fileTypes={[".csv"]} handleFiles={onChange}>
+        <button className="btn">Upload</button>
+      </ReactFileReader>
+      <hr />
+      <div className="app--main--container--separators">
+        {separators.map((sep) => (
+          <Separator key={sep.id} option={sep} selectOption={selectOption} />
+        ))}
+      </div>
+      <hr />
+      <div className="app--main--container--preview">
+        <table>
+          <thead>
+            <tr className="app--main--container--preview--header">
+              {selectedColumns &&
+                selectedColumns.map((x, i) => {
+                  return (
+                    <th
+                      className="app--main--container--preview--header--column"
+                      key={i}
+                    >
+                      {x.field}
+                    </th>
+                  );
+                })}
+            </tr>
+          </thead>
+          <tbody>
+            {selectedLines &&
+              selectedLines.map((x, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{x.field}</td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+      </div>
+      <hr />
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>January</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>February</td>
+            <td>$80</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Sum</td>
+            <td>$180</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  );
+};
+
+const Separator = ({ option, selectOption }) => {
+  const selected = option.selected;
+  const clickRadio = () => !selected && selectOption(option.id);
+
+  return (
+    <div className="separator--main--container">
+      <div className="separator--main--container--description">
+        {option.description}
+      </div>
+      <div
+        className={`separator--main--container--radio ${
+          selected ? "radio--selected" : ""
+        }`}
+        onClick={clickRadio}
+      />
     </div>
   );
 };
