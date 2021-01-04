@@ -1,9 +1,20 @@
 .topic--subject--main--container {
-  /* border: 0.5px solid yellow; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  width: 140px;
+}
+
+.topic--subject--main--container--name {
   color: white;
   text-align: center;
-  padding: 10px 0;
   font-family: "proximanova-regular";
   font-style: italic;
-  font-size: 14px;
+  font-size: 18px;
+}
+
+.topic--subject--main--container--icon {
+  color: white;
 }

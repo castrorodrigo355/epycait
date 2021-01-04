@@ -45,7 +45,6 @@
 }
 /* *************************************************************** */
 .subject--detail--main--container--topics {
-  border: 0.5px solid white;
 }
 
 @media (min-width: 500px) and (max-width: 659px) {
